@@ -1,0 +1,630 @@
+/* =============================================
+   OpenCade - Main Stylesheet
+   Theme: Neon Arcade (Dark/Cyber/Retro)
+   ============================================= */
+
+/* ---- Variables ---- */
+:root {
+    /* Colors */
+    --bg-dark: #050510;
+    --bg-panel: rgba(20, 20, 35, 0.6);
+    --bg-glass: rgba(255, 255, 255, 0.03);
+
+    --primary: #00f2ff;
+    /* Cyan Neon */
+    --secondary: #bc13fe;
+    /* Purple Neon */
+    --accent: #ff0055;
+    /* Pink Neon */
+
+    --text-main: #ffffff;
+    --text-dim: #a0a0b0;
+
+    /* Gradients */
+    --grad-main: linear-gradient(135deg, var(--primary), var(--secondary));
+    --grad-glow: linear-gradient(180deg, rgba(0, 242, 255, 0), rgba(0, 242, 255, 0.1));
+
+    /* Effects */
+    --glow-primary: 0 0 20px rgba(0, 242, 255, 0.5);
+    --glow-secondary: 0 0 20px rgba(188, 19, 254, 0.5);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+    --backdrop-blur: blur(12px);
+
+    /* Typography */
+    --font-body: 'Inter', sans-serif;
+    --font-display: 'Orbitron', sans-serif;
+}
+
+/* ---- Reset & Base ---- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Background Grid Animation */
+.bg-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-image:
+        linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center bottom;
+    perspective: 1000px;
+    opacity: 0.5;
+}
+
+.bg-grid::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, var(--bg-dark) 80%);
+}
+
+/* ---- Typography ---- */
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+/* ---- Components ---- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--primary);
+    color: var(--bg-dark);
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-main);
+}
+
+/* ---- Header ---- */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    z-index: 100;
+    background: rgba(5, 5, 16, 0.8);
+    backdrop-filter: var(--backdrop-blur);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-main);
+}
+
+.logo span {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: var(--primary);
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.5);
+}
+
+/* ---- Hero Section ---- */
+.hero {
+    padding-top: 140px;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.glitch-text {
+    background: linear-gradient(to right, var(--primary), #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.3));
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+.highlight {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* ---- Hero Visual (Arcade Cabinet CSS Art) ---- */
+.hero-visual {
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arcade-cabinet {
+    width: 300px;
+    height: 380px;
+    background: linear-gradient(180deg, #2a2a40, #1a1a2e);
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    box-shadow:
+        0 0 50px rgba(188, 19, 254, 0.2),
+        inset 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 4px solid #3a3a50;
+    border-bottom: none;
+}
+
+.cabinet-body {
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.screen {
+    background: #000;
+    border-radius: 10px;
+    height: 200px;
+    border: 4px solid #111;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0, 242, 255, 0.1);
+}
+
+.screen-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(188, 19, 254, 0.1), transparent 70%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.code-preview {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: var(--primary);
+    opacity: 0.8;
+}
+
+.code-line {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.code-line.indent {
+    margin-left: 20px;
+}
+
+.controls {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.joystick {
+    width: 60px;
+    height: 60px;
+    background: #111;
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid #333;
+}
+
+.joystick::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-a,
+.btn-b {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: block;
+}
+
+.btn-a {
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.btn-b {
+    background: var(--secondary);
+    box-shadow: 0 0 10px var(--secondary);
+}
+
+/* ---- Features Section ---- */
+.section {
+    padding: 8rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--text-main);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.glass-panel {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border: var(--glass-border);
+    padding: 2.5rem;
+    border-radius: 16px;
+    transition: 0.4s;
+}
+
+.glass-panel:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary);
+    box-shadow: 0 10px 40px -10px rgba(0, 242, 255, 0.2);
+}
+
+.feature-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.feature-card p {
+    color: var(--text-dim);
+    line-height: 1.6;
+}
+
+/* ---- Footer ---- */
+.footer {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 4rem;
+    background: linear-gradient(to top, #000, var(--bg-dark));
+}
+
+.footer-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-dim);
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-bottom p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-bottom strong {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.sub-text {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.footer-logos {
+    margin-top: 0.5rem;
+    padding: 12px;
+    background: transparent;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 250px;
+}
+
+.footer-logo-img {
+    height: 50px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    display: block;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.footer-logo-img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+/* ---- Games Page Specific ---- */
+.games-header {
+    text-align: center;
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+}
+
+.games-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    padding-bottom: 4rem;
+}
+
+/* ---- Game Card ---- */
+.game-card {
+    background: var(--bg-panel);
+    border: var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    backdrop-filter: blur(10px);
+    height: 100%;
+}
+
+.game-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--primary);
+    box-shadow:
+        0 15px 30px -10px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(0, 242, 255, 0.3),
+        inset 0 0 0 1px rgba(0, 242, 255, 0.3);
+    z-index: 10;
+}
+
+.game-card-thumbnail {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #0f0f1a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.4s;
+}
+
+.game-card:hover .game-card-thumbnail {
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.game-card-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+}
+
+.game-card-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-main);
+    font-family: var(--font-display);
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.game-card-description {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.game-card-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1rem;
+    margin-top: auto;
+}
+
+/* ---- Badges ---- */
+.badge {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.badge-beginner {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 136, 0.2));
+    color: #00ff88;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    text-shadow: 0 0 5px rgba(0, 255, 136, 0.4);
+}
+
+.tag {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-dim);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.tag:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .arcade-cabinet {
+        margin: 0 auto;
+        transform: scale(0.8);
+    }
+}

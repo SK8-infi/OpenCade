@@ -1,0 +1,139 @@
+/* =============================================
+   Tic-Tac-Toe - Neon Theme
+   ============================================= */
+
+:root {
+    --x-color: var(--primary);
+    --o-color: var(--secondary);
+    --win-line: var(--accent);
+    --cell-bg: rgba(255, 255, 255, 0.03);
+    --cell-hover: rgba(255, 255, 255, 0.08);
+}
+
+/* Adjust main container spacing */
+#game-root {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.text-highlight {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+}
+
+/* Status Message */
+.status {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    min-height: 2rem;
+    font-family: var(--font-display);
+    color: var(--text-dim);
+    letter-spacing: 1px;
+}
+
+.status.winner {
+    color: var(--win-line);
+    text-shadow: 0 0 10px var(--win-line);
+    animation: pulse 0.5s ease infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+/* Game Board */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 15px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Individual Cells */
+.cell {
+    background: var(--cell-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    font-family: var(--font-display);
+}
+
+.cell:hover:not(.taken) {
+    background: var(--cell-hover);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.cell:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+}
+
+.cell.taken {
+    cursor: not-allowed;
+}
+
+/* X and O markers */
+.cell.x {
+    color: var(--x-color);
+    text-shadow: 0 0 20px var(--x-color);
+}
+
+.cell.o {
+    color: var(--o-color);
+    text-shadow: 0 0 20px var(--o-color);
+}
+
+/* Winning cells */
+.cell.winner-cell {
+    background: rgba(255, 71, 87, 0.1);
+    border-color: var(--win-line);
+    animation: winGlow 0.5s ease infinite alternate;
+}
+
+@keyframes winGlow {
+    from {
+        box-shadow: 0 0 10px var(--win-line);
+    }
+
+    to {
+        box-shadow: 0 0 25px var(--win-line);
+    }
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    min-width: 140px;
+}

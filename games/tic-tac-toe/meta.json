@@ -1,0 +1,14 @@
+{
+    "slug": "tic-tac-toe",
+    "title": "Tic-Tac-Toe",
+    "description": "The classic X's and O's game. Play against a friend or challenge the simple AI.",
+    "thumbnail": "/assets/thumbnails/tictactoe.png",
+    "path": "/games/tic-tac-toe/index.html",
+    "author": "OSS Contributor",
+    "difficulty": "Beginner",
+    "controls": "Mouse click",
+    "tags": [
+        "puzzle",
+        "two-player"
+    ]
+}

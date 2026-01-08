@@ -1,0 +1,12 @@
+﻿{
+    "slot": "19",
+    "slug": "game-19",
+    "title": "Game Slot 19",
+    "description": "This slot is available! Claim it by renaming and building your game.",
+    "thumbnail": "../assets/thumbnails/placeholder.png",
+    "path": "./Game-19/index.html",
+    "author": "Unclaimed",
+    "difficulty": "Beginner",
+    "controls": "TBD",
+    "tags": ["unclaimed"]
+}

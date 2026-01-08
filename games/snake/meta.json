@@ -1,0 +1,14 @@
+{
+    "slug": "snake",
+    "title": "Snake",
+    "description": "Classic snake game built with HTML5 Canvas. Eat food to grow longer, but don't hit the walls or yourself!",
+    "thumbnail": "/assets/thumbnails/snake.png",
+    "path": "/games/snake/index.html",
+    "author": "OSS Contributor",
+    "difficulty": "Beginner",
+    "controls": "Arrow keys / WASD",
+    "tags": [
+        "arcade",
+        "classic"
+    ]
+}

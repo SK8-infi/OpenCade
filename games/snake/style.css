@@ -1,0 +1,115 @@
+/* =============================================
+   Snake Game - Neon Theme
+   ============================================= */
+
+/* Game Specific Variables */
+:root {
+    --snake-head: var(--primary);
+    --snake-body: rgba(0, 242, 255, 0.7);
+    --food-color: var(--accent);
+    --canvas-border: var(--primary);
+    --canvas-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+/* Adjust main container spacing */
+#game-root {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.score {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#score {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+}
+
+/* Canvas Wrapper */
+.canvas-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+#game-canvas {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--canvas-border);
+    border-radius: 8px;
+    box-shadow: var(--canvas-shadow);
+    max-width: 100%;
+}
+
+/* Controls Info */
+.controls-info {
+    margin-bottom: 2rem;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+
+kbd {
+    display: inline-block;
+    padding: 2px 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-family: monospace;
+    margin: 0 2px;
+    color: var(--primary);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Game Over Overlay */
+.game-over-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(5, 5, 16, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.game-over-overlay h2 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px var(--accent);
+}
+
+.game-over-overlay .final-score {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-family: var(--font-display);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

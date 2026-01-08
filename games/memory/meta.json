@@ -1,0 +1,14 @@
+{
+    "slug": "memory",
+    "title": "Memory Match",
+    "description": "Test your memory by matching pairs of cards. Find all pairs to win!",
+    "thumbnail": "/assets/thumbnails/memory.png",
+    "path": "/games/memory/index.html",
+    "author": "OSS Contributor",
+    "difficulty": "Beginner",
+    "controls": "Mouse click",
+    "tags": [
+        "puzzle",
+        "memory"
+    ]
+}
