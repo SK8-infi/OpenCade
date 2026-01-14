@@ -1,0 +1,12 @@
+﻿{
+    "slot": "04",
+    "slug": "flappy-bird",
+    "title": "Flappy Bird",
+    "description": "Navigate your bird through pipes by tapping or pressing space. Don't hit the pipes or the ground!",
+    "thumbnail": "../assets/thumbnails/flappy-bird.png",
+    "path": "./flappy bird/index.html",
+    "author": "Tarang-Nanwatkar",
+    "difficulty": "Beginner",
+    "controls": "Space or Click",
+    "tags": ["arcade", "endless"]
+}

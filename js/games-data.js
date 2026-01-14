@@ -72,19 +72,19 @@ const GAMES_DATA = [
     },
 
     // ========================================
-    // SLOT 04 - UNCLAIMED
+    // SLOT 04 - Flappy Bird (CLAIMED)
     // ========================================
     {
         slot: "04",
-        slug: "game-04",
-        title: "Game Slot 04",
-        description: "This slot is available! Claim it by building your game here.",
-        thumbnail: "../assets/thumbnails/placeholder.png",
-        path: "./Game-04/index.html",
-        author: "Unclaimed",
+        slug: "flappy bird",
+        title: "Flappy Bird",
+        description: "Navigate your bird through pipes by tapping or pressing space. Don't hit the pipes or the ground!",
+        thumbnail: "../assets/thumbnails/flappy-bird.png",
+        path: "./flappy bird/index.html",
+        author: "Tarang-Nanwatkar",
         difficulty: "Beginner",
-        controls: "TBD",
-        tags: ["unclaimed"]
+        controls: "Space or Click",
+        tags: ["arcade", "endless"]
     },
 
     // ========================================
