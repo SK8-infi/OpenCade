@@ -93,14 +93,14 @@ const GAMES_DATA = [
     {
         slot: "05",
         slug: "game-05",
-        title: "Game Slot 05",
-        description: "This slot is available! Claim it by building your game here.",
-        thumbnail: "../assets/thumbnails/placeholder.png",
+        title: "Guess the Number",
+        description: "Its a Random Number Guessing Game where the system generates a random number and the user has to guess it. The game provides feedback like too high or too low, tracks attempts, and notifies the user when the correct number is guessed.",
+        thumbnail: "../assets/thumbnails/randomNumberGame.png",
         path: "./Game-05/index.html",
-        author: "Unclaimed",
+        author: "Om Himthani",
         difficulty: "Beginner",
-        controls: "TBD",
-        tags: ["unclaimed"]
+        controls: "Numpad and mouse",
+        tags: ["Arcade","Casual"]
     },
 
     // ========================================
