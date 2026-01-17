@@ -1,0 +1,241 @@
+/* =============================================
+   Stylesheet
+   ============================================= */
+
+/* Import Fonts: Orbitron (Titles) AND Inter (Body/Nav - Matches Main Site) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Orbitron:wght@400;700;900&display=swap');
+
+/* --- GLOBAL RESET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #00f2ff;       /* Cyan */
+    --secondary: #bc13fe;     /* Purple */
+    --accent: #ff0055;        /* Pink */
+    --bg-dark: #050510;       /* Dark Background */
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Inter', sans-serif; /*
+}
+
+/* --- BASE LAYOUT --- */
+body {
+    background-color: var(--bg-dark);
+    color: #fff;
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: block; 
+}
+
+/* Game Container */
+#game-root {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 8rem 2rem 4rem 2rem; 
+}
+
+/* --- HEADER STYLES --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    z-index: 1000;
+    
+    background: rgba(5, 5, 16, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    line-height: 1;
+    transition: opacity 0.3s;
+}
+
+.logo span {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+.logo-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav a {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #a0a0b0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: var(--primary);
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.5);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .header .container { padding: 0 1.5rem; }
+    .nav { gap: 1rem; }
+    .logo span { display: none; }
+}
+
+/* --- GAME UI STYLES --- */
+
+/* Title */
+.game-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 15px rgba(188, 19, 254, 0.5));
+}
+
+/* Stats Dashboard */
+.stats-dashboard {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+}
+
+.stat-item { display: flex; flex-direction: column; }
+.stat-label { font-size: 0.8rem; color: var(--primary); letter-spacing: 2px; font-weight: bold; }
+.stat-value { font-size: 2.5rem; font-weight: bold; text-shadow: 0 0 10px var(--primary); }
+
+/* Terminal Window */
+.terminal-window {
+    background: rgba(10, 10, 20, 0.95);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    width: 100%;
+    height: 300px; 
+    position: relative;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.15);
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+#quote-display {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #a0a0b0;
+    padding: 2rem;
+    white-space: pre-wrap;
+    user-select: none;
+    transition: filter 0.3s;
+}
+
+/* Overlay / Start Screen */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 16, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s ease-in-out;
+}
+
+.overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.overlay-content h2 {
+    font-family: var(--font-display);
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.overlay-content p { color: #a0a0b0; margin-bottom: 2rem; }
+
+/* Typing Feedback */
+.correct { color: var(--primary); text-shadow: 0 0 5px var(--primary); }
+.incorrect { color: var(--accent); text-decoration: underline; background-color: rgba(255, 0, 85, 0.2); }
+.current { border-bottom: 3px solid var(--secondary); animation: blink 1s infinite; }
+@keyframes blink { 50% { border-color: transparent; } }
+
+/* Inputs & Buttons */
+.hidden-input { opacity: 0; position: absolute; z-index: -100; }
+
+.btn-neon {
+    background: transparent;
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1rem 3rem;
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+.btn-neon:hover {
+    background: var(--primary);
+    color: var(--bg-dark);
+    box-shadow: 0 0 40px rgba(0, 242, 255, 0.6);
+}
+
+#message-area { height: 1.5rem; color: var(--secondary); font-weight: bold; }

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <a href="../../index.html" class="logo">
+                <svg class="logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 16L8.586 20.586L18.586 10.586L14 6L4 16Z" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 6L18.586 10.586" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
+                </svg>
+                <span>OPEN</span>CADE
+            </a>
+            <nav class="nav">
+                <a href="../../index.html">Home</a>
+                <a href="../index.html">Games</a>
+                <a href="../../CONTRIBUTING.md">Contribute</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="game-root">
+            <h1 class="game-title">SPEED TEST</h1>
+            
+            <div class="stats-dashboard">
+                <div class="stat-item">
+                    <span class="stat-label">TIME</span>
+                    <span id="time" class="stat-value">60</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">WPM</span>
+                    <span id="wpm" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">ACCURACY</span>
+                    <span id="accuracy" class="stat-value">100%</span>
+                </div>
+            </div>
+
+            <div class="terminal-window">
+                <div id="quote-display"></div>
+
+                <div id="game-overlay" class="overlay">
+                    <div class="overlay-content">
+                        <h2>READY?</h2>
+                        <p>Press START to begin.</p>
+                        <button id="start-btn" class="btn-neon">START</button>
+                    </div>
+                </div>
+            </div>
+
+            <textarea id="quote-input" class="hidden-input"></textarea>
+            <div id="message-area"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
