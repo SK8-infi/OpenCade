@@ -104,19 +104,19 @@ const GAMES_DATA = [
     },
 
     // ========================================
-    // SLOT 06 - UNCLAIMED
+    // SLOT 06 - Typing Speed Test (CLAIMED)
     // ========================================
     {
-        slot: "06",
-        slug: "game-06",
-        title: "Game Slot 06",
-        description: "This slot is available! Claim it by building your game here.",
-        thumbnail: "../assets/thumbnails/placeholder.png",
-        path: "./Game-06/index.html",
-        author: "Unclaimed",
-        difficulty: "Beginner",
-        controls: "TBD",
-        tags: ["unclaimed"]
+    "slot": "06",
+    "slug": "typing-speed-test",
+    "title": "Typing Speed Test",
+    "description": "Race against the clock to type iconic quotes with speed and precision. Track your WPM, improve your accuracy, and challenge yourself to beat your high score.",
+    "thumbnail": "../assets/thumbnails/typing-speed-test.png",
+    "path": "./Typing Speed Test/index.html",
+    "author": "Tarang-Nanwatkar",
+    "difficulty": "Beginner",
+    "controls": "Keyboard",
+    "tags": ["typing", "speed", "utility"]
     },
 
     // ========================================
