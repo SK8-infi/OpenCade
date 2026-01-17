@@ -4,7 +4,7 @@
     "title": "Typing Speed Test",
     "description": "Race against the clock to type iconic quotes with speed and precision. Track your WPM, improve your accuracy, and challenge yourself to beat your high score.",
     "thumbnail": "../assets/thumbnails/typing-speed-test.png",
-    "path": "./typing speed test/index.html",
+    "path": "./typing-speed-test/index.html",
     "author": "Tarang-Nanwatkar",
     "difficulty": "Beginner",
     "controls": "Keyboard",
