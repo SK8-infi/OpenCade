@@ -1,0 +1,12 @@
+﻿{
+    "slot": "09",
+    "slug": "breakout-classic",
+    "title": "Breakout Classic",
+    "description": "A classic brick-breaking arcade game where you control a paddle to bounce the ball and destroy all bricks.",
+    "thumbnail": "../assets/thumbnails/breakout-classic.png",
+    "path": "./breakout-classic/index.html",
+    "author": "Ravi Ratnakar",
+    "difficulty": "Beginner",
+    "controls": "Left Arrow, Right Arrow",
+    "tags": ["arcade", "classic", "canvas", "beginner"]
+}

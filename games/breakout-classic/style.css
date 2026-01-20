@@ -1,0 +1,122 @@
+/* ================== THEME ================== */
+:root {
+    --bg: #0b0f1a;
+    --panel: rgba(255, 255, 255, 0.05);
+    --accent: #00d4ff;
+    --text-main: #e6e6e6;
+    --text-muted: #9aa0b4;
+}
+
+/* ================== RESET ================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================== LAYOUT ================== */
+#game-root {
+    width: 520px;
+    padding: 18px;
+    text-align: center;
+}
+
+.hud {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background: var(--panel);
+    border-radius: 10px;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+}
+
+.hud span {
+    color: var(--accent);
+    margin-left: 6px;
+}
+
+/* ================== CANVAS ================== */
+.canvas-wrapper {
+    position: relative;
+}
+
+#game-canvas {
+    display: block;
+    margin: 0 auto;
+    background: #0f1424;
+    border-radius: 8px;
+    box-shadow:
+        0 0 24px rgba(0, 212, 255, 0.25),
+        inset 0 0 14px rgba(0, 212, 255, 0.12);
+}
+
+/* ================== OVERLAY ================== */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 15, 26, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border-radius: 8px;
+}
+
+.overlay h2 {
+    font-size: 1.4rem;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+}
+
+.hidden {
+    display: none;
+}
+
+/* ================== CONTROLS ================== */
+.controls {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 6px 16px;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+button:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.hint {
+    margin-top: 8px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.overlay-active .controls {
+    display: none;
+}
