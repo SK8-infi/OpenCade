@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="load()">
+    <main>
+    <div class="firstscreen" id="firstscreen">
+        <h2>Guess The Random Number
+            Between 1-100</h2>
+            <img src="./game.svg" alt="logo">
+            <p>Select The Difficulty</p>
+            <div class="button" id="button" >
+                <button onclick="easy()">Easy:10 attempts</button>
+                <button onclick="hard()">Hard:5 attempts</button>
+            </div>
+
+        
+    </div>
+    <div class="secondscreen" id="secondscreen">
+        <button id="newgame" onclick="newg()">New Game</button>
+        <h3 id="highlow">Your Guess</h3>
+        <input type="number"
+        onchange="input()"
+        min="1"
+        max="100"
+        id="input"
+        placeholder="Guess"
+        >
+        <p>Number of previous attempts</p>
+        <span id="attempt">0</span>
+            <p>Number of previous guesses</p>
+            <span id="guesses">0</span>
+    </div>
+</main>
+<script src="./script.js"></script>
+</body>
+</html>
