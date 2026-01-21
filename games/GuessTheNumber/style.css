@@ -1,114 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-*{
+/* ===== Reset ===== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-main{
-    width: 100vw;
-    height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-background-color: purple;
-}
-.secondscreen{
-    width: 400px;
-    height:450px;
-    background-color: white;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-border-radius: 20px;
-transition: 0.3s all linear;
-display: none;
-}
-.secondscreen h3{
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 30px;
-    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
 }
 
-.secondscreen input[type="number"]{
-    padding:20px 80px;
-    /* text-align: center; */
-    font-size: 15px;
-border: 6px solid rgb(163, 51, 255);
-
-}
-.secondscreen p{
-    margin-top: 40px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
-}
-.secondscreen span{
-    font-size: 20px;
-    font-family: 'Josefin Sans', sans-serif;
-}
-.firstscreen img{
-    width: 300px;
-    margin-bottom: 50px;
-    
-}
-.firstscreen{
-    width: 400px;
-    height: 550px;
-    background-color: white;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-border-radius: 20px;
-transition: 0.3s all linear;
-
-}
-.firstscreen h2{
-    font-family: 'Josefin Sans', sans-serif;
-text-align: center;
-margin-bottom: 30px;
-}
-.firstscreen p{
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-.firstscreen .button{
+/* ===== Body ===== */
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1f2933, #0b0f14);
+    color: #e5e7eb;
     display: flex;
-    flex-direction: column;
-
-
-   
+    align-items: center;
+    justify-content: center;
 }
-.firstscreen button{
-    margin-top: 10px;
+
+/* ===== Main Wrapper ===== */
+main {
+    width: 100%;
+    max-width: 420px;
     padding: 20px;
-    background-image: linear-gradient(
-        92.88deg,
-        #4554b5 9.16%,
-        #5643cc 43.89%,
-        #673fd7 64.72%
-    );
-    transition: 0.3s all linear;
-    border-radius: 10px;
-    font-size: 20px;
-    font-family: 'Josefin Sans', sans-serif;
 }
-.secondscreen button{
-    margin: 30px 0px;
-    padding: 20px;
-    background-image: linear-gradient(
-        92.88deg,
-        #4554b5 9.16%,
-        #5643cc 43.89%,
-        #673fd7 64.72%
-    );
-    transition: 0.3s all linear;
+
+/* ===== Shared Screen Styles ===== */
+.firstscreen,
+.secondscreen {
+    background: linear-gradient(145deg, #121826, #0d111a);
+    border-radius: 16px;
+    padding: 28px 22px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.8s ease;
+}
+
+/* ===== First Screen ===== */
+.firstscreen h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.firstscreen img {
+    width: 140px;
+    margin: 18px auto;
+    display: block;
+    filter: drop-shadow(0 0 12px rgba(99, 102, 241, 0.4));
+}
+
+.firstscreen p {
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+    color: #9ca3af;
+}
+
+/* ===== Buttons Container ===== */
+.button {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+
+/* ===== Buttons ===== */
+button {
+    flex: 1;
+    padding: 12px 10px;
     border-radius: 10px;
-   display: none;
-   font-size: 20px;
-   font-family: 'Josefin Sans', sans-serif;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.5);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* ===== Second Screen ===== */
+.secondscreen {
+    display: none; /* controlled via JS */
+}
+
+#newgame {
+    width: 100%;
+    margin-bottom: 16px;
+    display: none;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+#highlow {
+    margin: 12px 0 18px;
+    font-weight: 600;
+    color: #a5b4fc;
+}
+
+/* ===== Input ===== */
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #1f2937;
+    background: #0b1220;
+    color: #e5e7eb;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 16px;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+}
+
+/* ===== Stats ===== */
+.secondscreen p {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-top: 8px;
+}
+
+.secondscreen span {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #facc15;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+    .firstscreen h2 {
+        font-size: 1.25rem;
+    }
+
+    button {
+        font-size: 0.85rem;
+    }
+
+    .firstscreen img {
+        width: 120px;
+    }
 }

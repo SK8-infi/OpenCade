@@ -49,7 +49,7 @@ attempt.innerHTML=array.length;
 
 const startgame = () => {
 document.getElementById('firstscreen').style.display="none";
-document.getElementById('secondscreen').style.display="flex";
+document.getElementById('secondscreen').style.display="grid";
 }
 const easy = () => {
     maxguess = 10;
