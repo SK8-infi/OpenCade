@@ -112,7 +112,7 @@ const GAMES_DATA = [
     "title": "Typing Speed Test",
     "description": "Race against the clock to type iconic quotes with speed and precision. Track your WPM, improve your accuracy, and challenge yourself to beat your high score.",
     "thumbnail": "../assets/thumbnails/typing-speed-test.png",
-    "path": "./typing speed test/index.html",
+    "path": "./typing-speed-test/index.html",
     "author": "Tarang-Nanwatkar",
     "difficulty": "Beginner",
     "controls": "Keyboard",
@@ -155,11 +155,16 @@ const GAMES_DATA = [
     // SLOT 09 - UNCLAIMED
     // ========================================
     {
+        slot: "09",
+        slug: "game-09",
         title: "Breakout Classic",
-        slug: "breakout-classic",
-        path: "games/breakout-classic/index.html",
-        thumbnail: "assets/thumbnails/breakout-classic.png",
-        difficulty: "Beginner"
+        description: "Breakout Classic is a browser-based arcade game inspired by the original brick-breaker genre.",
+        thumbnail: "../assets/thumbnails/breakout-classic.png",
+        path: "./Game-09/index.html",
+        author: "Unclaimed",
+        difficulty: "Beginner",
+        controls: "TBD",
+        tags: ["unclaimed"]
     },
 
     // ========================================
