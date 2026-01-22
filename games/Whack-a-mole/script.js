@@ -20,7 +20,8 @@
 // Define your game settings here
 const CONFIG = {
     // Example: canvas size, game speed, etc.
-    GAME_SPEED: 100,  // milliseconds between updates
+    GAME_SPEED: 800,
+    GAME_DURATION: 15000,  // milliseconds between updates
 };
 
 // ============================================
@@ -30,6 +31,8 @@ const CONFIG = {
 let gameState = {
     isRunning: false,
     score: 0,
+    timer: null,
+    interval : null,
     // Add more state variables as needed
 };
 
@@ -39,6 +42,9 @@ let gameState = {
 // Get references to HTML elements
 const gameRoot = document.getElementById('game-root');
 const startBtn = document.getElementById('start-btn');
+const scoreEl = document.getElementById('score');
+const moles = document.querySelectorAll('.mole');
+
 // const canvas = document.getElementById('game-canvas');
 // const ctx = canvas.getContext('2d');
 
@@ -74,52 +80,49 @@ function showMessage(message) {
  * Called when starting a new game
  */
 function initGame() {
-    gameState = {
-        isRunning: true,
-        score: 0,
-    };
-    showMessage('Game started!');
+    gameState.score = 0;
+    gameState.isRunning = true;
+    scoreEl.textContent = gameState.score;
+
+    gameState.interval = setInterval(showMole, CONFIG.GAME_SPEED);
+
+    gameState.timer = setTimeout(gameOver, CONFIG.GAME_DURATION);
 }
+function showMole() {
+    moles.forEach(mole => mole.classList.remove('up'));
+
+    const index = randomInt(0, moles.length - 1);
+    const mole = moles[index];
+
+    mole.classList.add('up');
+
+    mole.onclick = () => {
+        if (!gameState.isRunning) return;
+
+        gameState.score++;
+        scoreEl.textContent = gameState.score;
+        mole.classList.remove('up');
+    };
+}
+
 
 /**
  * Main game loop
  * Called repeatedly while the game is running
  */
-function gameLoop() {
-    if (!gameState.isRunning) return;
 
-    // UPDATE: Update game state (move elements, check collisions, etc.)
-    update();
-
-    // RENDER: Draw the current state to the screen
-    render();
-
-    // Schedule the next frame
-    setTimeout(gameLoop, CONFIG.GAME_SPEED);
-}
 
 /**
  * Update game state
  * Handle movement, collisions, scoring, etc.
  */
-function update() {
-    // TODO: Add your game update logic here
-    // Example:
-    // - Move player/enemies
-    // - Check for collisions
-    // - Update score
-}
+
 
 /**
  * Render the game
  * Draw everything to the canvas or update DOM elements
  */
-function render() {
-    // TODO: Add your rendering logic here
-    // Example for canvas:
-    // ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // ctx.fillRect(playerX, playerY, 20, 20);
-}
+
 
 /**
  * End the game
@@ -127,8 +130,11 @@ function render() {
  */
 function gameOver() {
     gameState.isRunning = false;
-    showMessage(`Game Over! Score: ${gameState.score}`);
-    // Optionally show a restart button
+    clearInterval(gameState.interval);
+
+    moles.forEach(mole => mole.classList.remove('up'));
+
+    alert(`Game Over! Your score: ${gameState.score}`);
 }
 
 // ============================================
@@ -138,47 +144,12 @@ function gameOver() {
 /**
  * Handle keyboard input
  */
-function handleKeyDown(event) {
-    // Prevent default browser behavior for game keys
-    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(event.key)) {
-        event.preventDefault();
-    }
 
-    // TODO: Add your key handling logic
-    switch (event.key) {
-        case 'ArrowUp':
-        case 'w':
-        case 'W':
-            // Move up
-            break;
-        case 'ArrowDown':
-        case 's':
-        case 'S':
-            // Move down
-            break;
-        case 'ArrowLeft':
-        case 'a':
-        case 'A':
-            // Move left
-            break;
-        case 'ArrowRight':
-        case 'd':
-        case 'D':
-            // Move right
-            break;
-        case ' ':
-            // Space bar action
-            break;
-    }
-}
-
-/**
- * Handle start button click
- */
 function handleStartClick() {
+    if (gameState.isRunning) return;
     initGame();
-    gameLoop();
 }
+
 
 // ============================================
 // 7. INITIALIZATION
@@ -190,7 +161,7 @@ function handleStartClick() {
 function init() {
     // Add event listeners
     startBtn.addEventListener('click', handleStartClick);
-    document.addEventListener('keydown', handleKeyDown);
+   
 
     // Optional: Show instructions or ready state
     showMessage('Click Start to begin!');
