@@ -161,10 +161,10 @@ const GAMES_DATA = [
         description: "Breakout Classic is a browser-based arcade game inspired by the original brick-breaker genre.",
         thumbnail: "../assets/thumbnails/breakout-classic.png",
         path: "./Game-09/index.html",
-        author: "Ravi Ratnakar",
+        author: "Unclaimed",
         difficulty: "Beginner",
-        controls: "TBD",
-        tags: ["unclaimed"]
+        controls: "Arrow keys",
+        tags: ["arcade", "classic"]
     },
 
     // ========================================
