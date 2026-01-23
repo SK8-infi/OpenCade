@@ -1,0 +1,12 @@
+﻿{
+    "slot": "10",
+    "slug": "maze-escape",
+    "title": "Maze Escape",
+    "description": "Find the correct path through the maze to reach the exit.",
+    "thumbnail": "../assets/thumbnails/placeholder.png",
+    "path": "./Game-10/index.html",
+    "author": "Tarang-Nanwatkar",
+    "difficulty": "Beginner",
+    "controls": "Arrow Keys",
+    "tags": ["arcade", "puzzle"]
+}
