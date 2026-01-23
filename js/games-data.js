@@ -168,19 +168,19 @@ const GAMES_DATA = [
     },
 
     // ========================================
-    // SLOT 10 - UNCLAIMED
+    // SLOT 10 - Maze Escape (CLAIMED)
     // ========================================
     {
         slot: "10",
-        slug: "game-10",
-        title: "Game Slot 10",
-        description: "This slot is available! Claim it by building your game here.",
-        thumbnail: "../assets/thumbnails/placeholder.png",
-        path: "./Game-10/index.html",
-        author: "Unclaimed",
+        slug: "maze-escape",
+        title: "Maze Escape",
+        description: "Find the correct path through the maze to reach the exit.",
+        thumbnail: "../assets/thumbnails/maze-escape.png",
+        path: "./maze-escape/index.html",
+        author: "Tarang-Nanwatkar",
         difficulty: "Beginner",
-        controls: "TBD",
-        tags: ["unclaimed"]
+        controls: "Arrow Keys",
+        tags: ["arcade", "puzzle"]
     },
 
     // ========================================
