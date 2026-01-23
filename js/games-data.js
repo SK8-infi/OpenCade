@@ -156,15 +156,15 @@ const GAMES_DATA = [
     // ========================================
     {
         slot: "09",
-        slug: "game-09",
-        title: "Game Slot 09",
-        description: "This slot is available! Claim it by building your game here.",
-        thumbnail: "../assets/thumbnails/placeholder.png",
+        slug: "breakout-classic",
+        title: "Breakout Classic",
+        description: "Breakout Classic is a browser-based arcade game inspired by the original brick-breaker genre.",
+        thumbnail: "../assets/thumbnails/breakout-classic.png",
         path: "./Game-09/index.html",
         author: "Unclaimed",
         difficulty: "Beginner",
-        controls: "TBD",
-        tags: ["unclaimed"]
+        controls: "Arrow keys",
+        tags: ["arcade", "classic"]
     },
 
     // ========================================

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breakout Classic</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main>
+        <div id="game-root">
+
+            <!-- HUD -->
+            <div class="hud">
+                <div class="hud-item">SCORE <span id="score">0</span></div>
+                <div class="hud-item">HIGH <span id="high-score">0</span></div>
+                <div class="hud-item">LIVES <span id="lives">3</span></div>
+            </div>
+
+
+            <!-- Canvas -->
+            <div class="canvas-wrapper">
+                <canvas id="game-canvas" width="480" height="320"></canvas>
+
+                <!-- Overlay -->
+                <div id="overlay" class="overlay hidden">
+                    <h2 id="overlay-title"></h2>
+                    <button id="overlay-btn">RESTART</button>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button id="start-btn">START</button>
+                <button id="pause-btn">PAUSE</button>
+            </div>
+
+            <p class="hint">Use ← → to move</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
