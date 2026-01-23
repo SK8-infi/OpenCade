@@ -60,13 +60,13 @@ h1 {
     background: #0f0f1a;
 }
 
-/* ---- Game Board (for DOM-based games) ---- */
-#game-board {
+
+/* #game-board {
     display: inline-block;
     margin: 20px auto;
-}
+} */
 
-/* ---- Buttons ---- */
+
 button {
     padding: 12px 24px;
     font-size: 1rem;
@@ -88,13 +88,13 @@ button:active {
     transform: translateY(0);
 }
 
-/* ---- Score Display ---- */
+
 .score {
     font-size: 1.5rem;
     margin: 10px 0;
 }
 
-/* ---- Game Over Overlay ---- */
+
 .game-over {
     position: fixed;
     top: 0;
@@ -113,4 +113,54 @@ button:active {
     font-size: 3rem;
     margin-bottom: 1rem;
     color: var(--accent-color);
+}
+
+.whack-game {
+    display: grid;
+    grid-template-columns: repeat(9, 100px); /* 9 holes in ONE horizontal line */
+    gap: 15px;
+    justify-content: center;
+    margin: 25px auto;
+}
+
+
+
+
+
+
+.hole {
+    width: 100px;
+    height: 100px;
+    background: #4a2c12;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.6);
+}
+
+
+.mole {
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle, #34d399, #15803d);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -70px;
+    left: 15px;
+    transition: bottom 0.2s ease;
+    cursor: pointer;
+}
+
+
+.mole.up {
+    bottom: 15px;
+}
+/* FORCE HORIZONTAL LAYOUT */
+#game-board {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* IMPORTANT */
 }
