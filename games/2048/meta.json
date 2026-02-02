@@ -1,0 +1,12 @@
+﻿{
+    "slot": "11",
+    "slug": "game-11",
+    "title": "2048 LITE",
+    "description": "2048 Lite is a simple puzzle game where you merge matching numbers to reach 2048 and score high.",
+    "thumbnail": "../assets/thumbnails/two048.png",
+    "path": "./two048/two048.html",
+    "author": "Unclaimed",
+    "difficulty": "Beginner",
+    "controls": "arrow keys",
+    "tags": ["Puzzle", "Casual","Brain Training"]
+}

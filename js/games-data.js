@@ -184,19 +184,19 @@ const GAMES_DATA = [
     },
 
     // ========================================
-    // SLOT 11 - UNCLAIMED
+    // SLOT 11 - 2048 LITE  (CLAIMED)
     // ========================================
     {
         slot: "11",
         slug: "game-11",
-        title: "Game Slot 11",
-        description: "This slot is available! Claim it by building your game here.",
-        thumbnail: "../assets/thumbnails/placeholder.png",
-        path: "./Game-11/index.html",
+        title: "2048 LITE",
+        description: "2048 Lite is a simple puzzle game where you merge matching numbers to reach 2048 and score high.",
+        thumbnail: "../assets/thumbnails/two048.png",
+        path: "./two048/2048.html",
         author: "Unclaimed",
         difficulty: "Beginner",
-        controls: "TBD",
-        tags: ["unclaimed"]
+        controls: "arrow keys",
+        tags: ["Puzzle", "Casual","Brain Training"]
     },
 
     // ========================================
