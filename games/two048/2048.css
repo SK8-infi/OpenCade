@@ -1,0 +1,194 @@
+/* /* =============================================
+   Game Template Stylesheet
+   =============================================
+   
+   This file contains basic styles for your game.
+   Modify as needed for your specific game.
+   
+   Tips:
+   - Keep styles simple and focused
+   - Use CSS variables for colors (easy theming)
+   - Add comments to explain non-obvious styles
+   ============================================= */
+
+
+body {
+    text-align: center;
+    background: linear-gradient(180deg, #0B0033, #12002F);
+    color: #FFFFFF;
+    font-family: 'Courier New', monospace;
+}
+hr{
+    width: 500px;
+}
+
+/* Title */
+h1 {
+  color: #FF00FF;
+  text-shadow:
+    0 0 5px #FF00FF,
+    0 0 15px #00E5FF,
+    0 0 30px #FF00FF;
+}
+
+#board {
+    width: 400px;
+    height: 400px;
+
+    background-color: black;
+    border: 6px solid  #FF00FF ;
+    box-shadow: 0 0 12px currentColor;
+    color: #FF00FF;
+  text-shadow:
+    0 0 5px #FF00FF,
+    0 0 15px #00E5FF,
+    0 0 30px #FF00FF;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+/* Tiles */
+.tile {
+    width: 90px;
+    height: 90px;
+    color: #000;
+    font-weight: bold;
+    font-size: 35px;
+    text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid white;
+
+}
+
+/* Tiles */
+.x2    {
+    background: #00FFF7;
+    box-shadow: 0 0 10px currentColor;
+}
+.x4    {
+    background: #00FF9C;
+    box-shadow: 0 0 10px currentColor;}
+.x8    {
+    background: #39FF14;
+    box-shadow: 0 0 10px currentColor }
+.x16   {
+    background: #FAFF00;
+    color: #000;
+    box-shadow: 0 0 10px currentColor }
+.x32   {
+        background: #FFAE00;
+    box-shadow: 0 0 10px currentColor }
+.x64   {
+    background: #FF6A00;
+box-shadow: 0 0 10px currentColor }
+
+.x128  {
+    background: #FF0080;
+box-shadow: 0 0 10px currentColor }
+.x256  {
+    background: #FF00FF;
+box-shadow: 0 0 10px currentColor}
+.x512  {
+    background: #B026FF;
+box-shadow: 0 0 10px currentColor }
+.x1024 {
+    background: #6F00FF;
+    box-shadow: 0 0 10px currentColor }
+.x2048 {
+    background: #1F51FF;
+box-shadow: 0 0 10px currentColor }
+
+/* Game Over Full Screen */
+.game-over {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+/* Hide by default */
+.hidden {
+  display: none;
+}
+
+/* Game Over Box */
+.game-over-box {
+  background: #111128;
+  padding: 30px 40px;
+  border-radius: 15px;
+  text-align: center;
+
+  box-shadow: 0 0 25px #00fff7;
+
+  width: 280px;
+}
+
+/* Title */
+.game-over-box h1 {
+  color: #00fff7;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #00fff7;
+}
+
+/* Score */
+.game-over-box p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Button */
+.game-over-box button {
+  background: transparent;
+  border: 2px solid #00fff7;
+  color: #00fff7;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  box-shadow: 0 0 10px #00fff7;
+}
+
+.game-over-box button:hover {
+  background: #00fff7;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
